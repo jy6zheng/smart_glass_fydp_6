@@ -3,7 +3,7 @@ import time
 
 class LightSensor():
     def __init__(self):
-        self.obus = smbus.SMBus(1) #outside light sensor, pins 2 and 3
+        self.obus = smbus.SMBus(4) #outside light sensor, pins 2 and 3
         self.ibus = smbus.SMBus(3) #inside light sensor, pins 23 and 24
         self.address = 0x29
         self.obus.write_byte_data(self.address, 0x00 | 0x80, 0x03) #control register, 0x03 power on
