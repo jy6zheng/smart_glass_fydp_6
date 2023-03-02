@@ -18,7 +18,18 @@ def transparency():
 transparency = Thread(target=transparency)
 transparency.start()
 
+def light_sensor_mode(difference):
+        # NOTE: going to add feature that considers magnitude
+        # positive indicates outside is righter
+        if difference > 1:
+            print("increase natural light")
+            return 1
+        else:
+            print("increase privacy")
+            return 0
+
 while True:
+    light_sensor = LightSensor()
     console_input = input("operation mode number: ") 
     if console_input == "1":
         print("regular mode")
@@ -28,6 +39,21 @@ while True:
         else:
             print("opaque")
             CURRENT_STATE = 0
+    elif console_input == "2":
+        print("light sensing mode")
+        try:
+            while(True):
+                difference = light_sensor.read_light()
+                CURRENT_STATE = light_sensor_mode(difference)
+        except KeyboardInterrupt:
+            continue
+        
+                
+                
+        
+    
+            
+    
     
 
 
