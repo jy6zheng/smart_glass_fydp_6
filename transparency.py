@@ -1,6 +1,8 @@
 import RPi.GPIO as GPIO
 import time
 
+GPIO.setwarnings(False)
+
 # set up the GPIO pins
 A0 = 5
 A1 = 6
