@@ -49,10 +49,10 @@ def main():
     while True: 
         console_input = input("operation mode number: ") 
         if console_input == "1":
-            window.lcd.lcd_clear()
-            window.lcd.lcd_display_string("time: ", 1)
-            print("on and off mode")
-            window.regular_mode()
+                window.lcd.lcd_clear()
+                window.lcd.lcd_display_string("time: ", 1)
+                print("on and off mode")
+                window.regular_mode()
         elif console_input == "2":
             # indicating that current state is light sensing mode
             window.lcd.lcd_clear()
